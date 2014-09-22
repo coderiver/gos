@@ -1,0 +1,94 @@
+.header
+	.header__top
+		padding: 16px 0 26px
+		+vertical
+		text-align: left
+		white-space: nowrap
+
+	.logo
+		display: inline-block
+		vertical-align: middle
+
+	.header__title
+		display: inline-block
+		vertical-align: middle
+		+medium
+		margin-left: 20px
+		font-size: 24px
+		line-height: 1.25
+		color: $blue
+		letter-spacing: -0.02em
+		white-space: normal
+
+.logo
+	display: block
+	+hide-text
+	+s(logo)
+
+.menu
+	background: $blue
+	height: 60px
+	line-height: 60px
+	+medium
+
+	.menu__list
+		position: relative
+		margin: 0 40px
+		height: 60px
+		li
+			float: left
+		a
+			display: block
+			padding: 0 30px
+			font-size: 16px
+			color: #fff
+			text-decoration: none
+			&:hover
+				background-color: $red
+			+tab
+				padding: 0 15px
+			+mob
+				padding: 0 10px
+
+	.flexMenu-viewMore
+		position: relative
+		a[title]
+			letter-spacing: 0.1em
+		&.active
+			background: $red
+
+	.flexMenu-popup
+		background: $red
+		top: 100%
+		right: 0
+		width: auto
+		padding: 10px 0
+		z-index: 100
+		li
+			float: none
+		a
+			line-height: 40px
+			box-sizing: border-box
+			white-space: nowrap
+			&:hover
+				background: rgba(0,0,0,0.2)
+
+	.menu__btn
+		position: absolute
+		top: 0
+		left: 30px
+		&:before
+			position: relative
+			top: -1px
+			content: ""
+			display: inline-block
+			vertical-align: middle
+			+s(menu-btn)
+		&.menu__btn_search
+			left: auto
+			right: 30px
+			&:before
+				+s(search)
+		&:hover
+			background: $red
+

@@ -1,216 +1,258 @@
-// Normally mainpage styles
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//------------------------------------------------------------------------------
+//
+//    #topslider
+//
+//------------------------------------------------------------------------------
+
+.topslider
+	position: relative
+
+	.topslider__nav
+		height: 40px
+		position: absolute
+		z-index: 3
+		bottom: 130px
+		left: 0
+		right: 0
+		line-height: 40px
+		font-size: 0
+
+	.topslider__label
+		background: $red
+		display: inline-block
+		vertical-align: top
+		font-size: 18px
+		padding: 0 17px
+		color: #FFF
+		a
+			color: #FFF
+			text-decoration: none
+		i
+			display: inline-block
+			+s(flag)
+			margin-right: 5px
+			position: relative
+			top: 3px
+
+	.topslider__prev,
+	.topslider__next
+		width: 40px
+		background: #FFF
+		display: inline-block
+		vertical-align: top
+		text-align: center
+		cursor: pointer
+		&:before
+			content: ""
+			display: inline-block
+			vertical-align: middle
+			position: relative
+			top: 3px
+	.topslider__prev
+		&:before
+			+s(topslider-prev)
+	.topslider__next
+		background: $blue
+		&:before
+			+s(topslider-next)
+
+.slide
+	position: relative
+	background-color: #3C485B
+
+	img
+		display: block
+		margin: 0 auto
+		max-width: 100%
+
+	.slide__pic
+		overflow: hidden
+
+	.slide__box
+		position: absolute
+		z-index: 2
+		bottom: 0
+		left: 0
+		right: 0
+		padding: 19px 0 23px
+		background-color: $blue
+		background-color: rgba(45,55,70,0.5)
+
+	.slide__title
+		font-size: 24px
+		line-height: 1.25
+		color: #FFF
+		+space
+		a
+			text-decoration: none
+			color: #FFF
+
+	.slide__date
+		display: block
+		margin-top: 10px
+		font-size: 12px
+		line-height: 1.5
+		color: #7C8696
+
+
+
+
+
+//------------------------------------------------------------------------------
+//
+//    #blocks
+//
+//------------------------------------------------------------------------------
+
+.title
+	margin-top: 30px
+	+book
+	font-size: 30px
+	line-height: 1.2
+	color: $blue
+	&:first-child
+		margin-top: 0
+
+.news
+	display: block
+	margin-top: 25px
+	text-decoration: none
+	color: $blue
+	> a
+		color: $blue
+		text-decoration: none
+
+	img
+		display: block
+		max-width: 100%
+		&:first-child
+			margin-bottom: 10px
+		&:last-child
+			margin-top: 10px
+
+	.news__title
+		padding-top: 5px
+		font-size: 16px
+		line-height: 1.5
+		font-weight: normal
+		color: $blue
+		&:hover
+			color: $red
+
+	.title + &
+		margin-top: 15px
+
+	&.news_important
+		.news__title
+			color: $red
+			line-height: 1.43
+			font-size: 21px
+			&:hover
+				opacity: 0.7
+
+	&.news_small
+		.news__title
+			font-size: 13px
+			line-height: 1.4
+		.info
+			font-size: 13px
+			line-height: 1.4
+		& + &
+			margin-top: 20px
+			padding-top: 20px
+			border-top: 1px solid #eaeef4
+
+.info
+	display: block
+	font-size: 12px
+	line-height: 2
+	color: $gray
+	.news &
+		cursor: text
+
+.link-more
+	display: inline-block
+	margin-top: 25px
+	font-size: 14px
+	line-height: 1.2
+	color: $red
+	text-decoration: none
+	&:hover
+		text-decoration: underline
+
+.btn
+	display: inline-block
+	height: 50px
+	padding: 0 38px
+	text-align: center
+	font-size: 24px
+	border: 1px solid $blue
+	opacity: 0.4
+	background: none
+	color: $blue
+	+book
+	&:hover
+		opacity: 1
+	&.btn_red
+		color: $red
+		border-color: $red
+
+
+
+
+
+//------------------------------------------------------------------------------
+//
+//    #poll
+//
+//------------------------------------------------------------------------------
+
+.poll
+	position: relative
+	padding: 30px
+	border: 1px solid #c2c4c9
+
+	.poll__title
+		font-size: 24px
+		line-height: 1.25
+		color: $blue
+		margin-right: 15%
+
+	.poll__counter
+		margin-top: 13px
+		font-size: 16px
+		line-height: 1.5
+		color: #b1ca08
+
+	.poll__question
+		margin-top: 5px
+		+medium
+		font-size: 16px
+		line-height: 1.5
+		color: $blue
+
+	.poll__answer
+		margin-top: 18px
+
+	.poll__radio
+		display: inline-block
+		vertical-align: middle
+		margin-left: 21px
+		font-size: 14px
+		color: $blue
+		input[type="radio"]
+			margin-right: 5px
+		&:first-child
+			margin-left: 0
+
+	.link-more
+		position: absolute
+		top: 13px
+		right: 20px
+		margin: 0
+
+	.btn
+		margin-top: 27px
+
+	.btn + .btn
+		margin-left: 9px

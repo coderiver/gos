@@ -1,9 +1,21 @@
 // default layout
-.l
+.l-center
+	position: relative
+	max-width: 940px
+	margin: 0 auto
+	padding: 0 30px
+
+
+.l-content
+	padding: 22px 0 40px
 	+clr
-	.l-col1
+	.l-col1,
+	.l-col2,
+	.l-col3
+		width: percentage(295/940)
 		float: left
-		width: 20%
-	.l-col2
-		float: right
-		width: 70%
+		margin-right: percentage(27/940)
+	.l-col3
+		margin-right: 0
+
+
