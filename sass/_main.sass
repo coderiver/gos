@@ -6,6 +6,9 @@
 
 .topslider
 	position: relative
+	background-color: #3C485B
+	+mob
+		padding-top: 42px
 
 	.topslider__nav
 		height: 40px
@@ -16,6 +19,8 @@
 		right: 0
 		line-height: 40px
 		font-size: 0
+		+mob
+			position: static
 
 	.topslider__label
 		background: $red
@@ -58,7 +63,6 @@
 
 .slide
 	position: relative
-	background-color: #3C485B
 
 	img
 		display: block
@@ -67,6 +71,8 @@
 
 	.slide__pic
 		overflow: hidden
+		+mob
+			display: none
 
 	.slide__box
 		position: absolute
@@ -74,15 +80,22 @@
 		bottom: 0
 		left: 0
 		right: 0
+		min-height: 130px
+		box-sizing: border-box
 		padding: 19px 0 23px
 		background-color: $blue
 		background-color: rgba(45,55,70,0.5)
+		+mob
+			position: static
+			min-height: auto
+			background: none
 
 	.slide__title
 		font-size: 24px
 		line-height: 1.25
 		color: #FFF
 		+space
+		text-decoration: none
 		a
 			text-decoration: none
 			color: #FFF
@@ -197,6 +210,49 @@
 		color: $red
 		border-color: $red
 
+.search
+	position: relative
+	font-size: 0
+	padding-right: 87px
+	.search__ico
+		position: absolute
+		top: 12px
+		left: 16px
+		+s(search-input)
+	input[type="text"]
+		display: block
+		height: 40px
+		width: 100%
+		box-sizing: border-box
+		padding: 0 15px 0 40px
+		+book
+		font-size: 14px
+		color: $blue
+		+placeholder
+			color: #cdcfd1
+	.search__btn
+		position: absolute
+		top: 0
+		right: 0
+		height: 40px
+		width: 87px
+		text-align: center
+		background: $red
+		+medium
+		color: #FFF
+		font-size: 16px
+
+.rss
+	display: inline-block
+	+medium
+	font-size: 14px
+	color: $blue
+	&:before
+		content: ""
+		display: inline-block
+		vertical-align: middle
+		+s(rss)
+		margin-right: 6px
 
 
 
@@ -211,12 +267,16 @@
 	position: relative
 	padding: 30px
 	border: 1px solid #c2c4c9
+	+mob
+		padding-top: 60px
 
 	.poll__title
 		font-size: 24px
 		line-height: 1.25
 		color: $blue
 		margin-right: 15%
+		+mob
+			margin: 0
 
 	.poll__counter
 		margin-top: 13px
@@ -227,32 +287,39 @@
 	.poll__question
 		margin-top: 5px
 		+medium
+		font-weight: bold
 		font-size: 16px
 		line-height: 1.5
 		color: $blue
 
 	.poll__answer
-		margin-top: 18px
+		margin-left: -21px
 
 	.poll__radio
 		display: inline-block
 		vertical-align: middle
-		margin-left: 21px
+		margin: 18px 0 0 21px
 		font-size: 14px
 		color: $blue
 		input[type="radio"]
 			margin-right: 5px
-		&:first-child
-			margin-left: 0
 
 	.link-more
 		position: absolute
 		top: 13px
 		right: 20px
 		margin: 0
+		+mob
+			top: 25px
+			right: 25px
 
 	.btn
 		margin-top: 27px
+		+mob
+			display: block
 
 	.btn + .btn
 		margin-left: 9px
+		+mob
+			margin-left: 0
+			margin-top: 9px

@@ -26,6 +26,7 @@
 			margin-top: 24px
 			&:first-child
 				font-size: 18px
+				// font-weight: bold
 				margin-top: 0
 				a
 					color: $blue
@@ -33,3 +34,43 @@
 			color: #7C8696
 			&:hover
 				color: $blue
+		+mob
+			display: block
+			width: 100%
+			margin-bottom: 20px
+			li
+				display: none
+				&:first-child
+					display: block
+
+	.footer__search
+		padding-right: 85px
+		position: relative
+		+mob
+			margin-top: 40px
+
+		.rss
+			position: absolute
+			top: 10px
+			right: 0
+
+	.footer__bottom
+		padding: 42px 0 37px
+		+vertical
+		text-align: left
+		white-space: nowrap
+
+	.footer__logo
+		display: inline-block
+		vertical-align: middle
+		+s(logo-footer)
+
+	.footer__title
+		display: inline-block
+		vertical-align: middle
+		width: 80%
+		margin-left: 13px
+		font-size: 12px
+		line-height: 1.167
+		color: #7c8696
+		white-space: normal

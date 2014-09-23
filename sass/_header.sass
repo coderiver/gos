@@ -1,24 +1,43 @@
 .header
 	.header__top
-		padding: 16px 0 26px
-		+vertical
-		text-align: left
-		white-space: nowrap
+		position: relative
+		padding: 16px 0 26px 120px
+		font-size: 0
+		&:before
+			content: ""
+			display: inline-block
+			vertical-align: middle
+			width: 0
+			height: 100%
+			min-height: 105px
+		+mob
+			padding-left: 0
+			height: auto
+			&:before
+				display: none
+
 
 	.logo
-		display: inline-block
-		vertical-align: middle
+		position: absolute
+		top: 16px
+		left: 0
+		+mob
+			display: none
 
 	.header__title
 		display: inline-block
 		vertical-align: middle
 		+medium
-		margin-left: 20px
 		font-size: 24px
 		line-height: 1.25
+		text-align: left
 		color: $blue
 		letter-spacing: -0.02em
 		white-space: normal
+		+mob
+			display: block
+			font-size: 16px
+			line-height: 1.5
 
 .logo
 	display: block
@@ -50,28 +69,30 @@
 			+mob
 				padding: 0 10px
 
-	.flexMenu-viewMore
-		position: relative
-		a[title]
-			letter-spacing: 0.1em
-		&.active
-			background: $red
+		.flexMenu-viewMore
+			position: relative
+			a[title]
+				letter-spacing: 0.1em
+			&.active
+				background: $red
+			+mob
+				float: right
 
-	.flexMenu-popup
-		background: $red
-		top: 100%
-		right: 0
-		width: auto
-		padding: 10px 0
-		z-index: 100
-		li
-			float: none
-		a
-			line-height: 40px
-			box-sizing: border-box
-			white-space: nowrap
-			&:hover
-				background: rgba(0,0,0,0.2)
+		.flexMenu-popup
+			background: $red
+			top: 100%
+			right: 0
+			width: auto
+			padding: 10px 0
+			z-index: 100
+			li
+				float: none
+			a
+				line-height: 40px
+				box-sizing: border-box
+				white-space: nowrap
+				&:hover
+					background: rgba(0,0,0,0.2)
 
 	.menu__btn
 		position: absolute
