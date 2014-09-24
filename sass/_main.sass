@@ -134,6 +134,8 @@
 	> a
 		color: $blue
 		text-decoration: none
+	&:first-child
+		margin-top: 0
 
 	img
 		display: block
@@ -225,11 +227,18 @@
 		width: 100%
 		box-sizing: border-box
 		padding: 0 15px 0 40px
+		border: 1px solid #E0DFDF
+		border-width: 1px 0 1px 1px
+		box-shadow: none
+		border-radius: 0
 		+book
 		font-size: 14px
 		color: $blue
 		+placeholder
 			color: #cdcfd1
+		// &:focus
+		// 	+ .search__clear
+		// 		display: block
 	.search__btn
 		position: absolute
 		top: 0
@@ -241,6 +250,13 @@
 		+medium
 		color: #FFF
 		font-size: 16px
+	.search__clear
+		display: none
+		position: absolute
+		top: 13px
+		bottom: 0
+		right: 13px
+		+s(input-clear)
 
 .rss
 	display: inline-block
@@ -253,6 +269,68 @@
 		vertical-align: middle
 		+s(rss)
 		margin-right: 6px
+
+.pagi
+	border: 1px solid #eaebec
+	border-width: 1px 0 1px
+	padding: 27px 0
+	font-size: 14px
+	line-height: 1.7
+	color: $red
+	margin-left: -5px
+	a
+		display: inline-block
+		padding: 0 5px
+		color: $red
+		text-decoration: none
+		&:hover
+			color: $blue
+	li
+		display: inline-block
+		margin-right: 20px
+		&.is-active
+			a
+				color: #B9BABA
+	+mob
+		border: none
+		padding-top: 0
+
+.breadcrumbs
+	margin-top: 30px
+	font-size: 36px
+	line-height: 1
+	li
+		display: inline-block
+		margin-right: 14px
+		&:last-child
+			font-size: 21px
+			margin-right: 0
+			a
+				color: #c6c6c6
+			&:after
+				display: none
+		&:after
+			content: ""
+			display: inline-block
+			+s(arrow)
+			margin-left: 18px
+
+	&.breadcrumbs_small
+		font-size: 14px
+		a
+			color: $red
+			&:hover
+				color: $blue
+		li
+			margin-right: 6px
+			&:last-child
+				a
+					font-size: 14px
+					color: $blue
+			&:after
+				margin-left: 11px
+		+mob
+			display: none
 
 
 
