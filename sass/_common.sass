@@ -71,6 +71,11 @@ $blue3: #617490
 	font-family: "FranklinGothic-Medium.ttf", Arial, sans-serif
 	font-weight: normal
 
++font(AvantGardeLT-CondBook, AvantGardeLT-CondBook)
+=avant
+	font-family: AvantGardeLT-CondBook
+	font-weight: normal
+
 =space
 	letter-spacing: -0.02em
 
@@ -79,6 +84,7 @@ body
 	+book
 	font-size: 16px
 	line-height: 1.4
+	color: $blue
 
 a
 	color: $blue
@@ -86,8 +92,10 @@ a
 	&:hover
 		color: $red
 
-// common blocks
 
+.hide-on-mobile
+	+mob
+		display: none
 
 
 

@@ -125,6 +125,9 @@
 	color: $blue
 	&:first-child
 		margin-top: 0
+	&.title_red
+		font-size: 24px
+		color: $red
 
 .news
 	display: block
@@ -271,9 +274,7 @@
 		margin-right: 6px
 
 .pagi
-	border: 1px solid #eaebec
-	border-width: 1px 0 1px
-	padding: 27px 0
+	margin: 27px 0
 	font-size: 14px
 	line-height: 1.7
 	color: $red
@@ -291,9 +292,15 @@
 		&.is-active
 			a
 				color: #B9BABA
+	&.pagi_border-top
+		margin-top: 0
+		padding-top: 27px
+		border-top: 1px solid #eaebec
+		+mob
+			padding-top: 0
+			border: none
 	+mob
-		border: none
-		padding-top: 0
+		margin-top: 0
 
 .breadcrumbs
 	margin-top: 30px
@@ -315,7 +322,25 @@
 			+s(arrow)
 			margin-left: 18px
 
+	&.breadcrumbs_medium
+		margin-top: 45px
+		font-size: 21px
+		a
+			color: $blue
+			&:hover
+				color: $red
+		li
+			&:last-child
+				font-size: inherit
+				a
+					color: $blue
+
+
 	&.breadcrumbs_small
+		margin-top: 0
+		padding-top: 30px
+		border-top: 1px solid #eaebec
+		margin-bottom: 30px
 		font-size: 14px
 		a
 			color: $red
@@ -329,8 +354,44 @@
 					color: $blue
 			&:after
 				margin-left: 11px
-		+mob
-			display: none
+
+.document
+	display: block
+	margin-top: 22px
+	color: $blue
+	&:first-child
+		margin-top: 0
+	&:hover
+		color: $red
+		.document__type
+			+s(doc-h)
+	.document__type
+		box-sizing: border-box
+		padding: 46px 0 0 9px
+		+s(doc)
+		font-size: 12px
+		line-height: 1.6
+		color: #9198a2
+		span
+			display: block
+			text-transform: uppercase
+			+avant
+			font-size: 18px
+			line-height: 1
+			&.doc
+				color: #0964c2
+			&.xls
+				color: #99bb12
+			&.rtf
+				color: #742929
+			&.pdf
+				color: #f82502
+	.document__title
+		display: block
+		margin-top: 14px
+		font-size: 16px
+		line-height: 1.5
+		font-weight: normal
 
 
 
@@ -401,3 +462,89 @@
 		+mob
 			margin-left: 0
 			margin-top: 9px
+
+
+
+
+
+//------------------------------------------------------------------------------
+//
+//    #article
+//
+//------------------------------------------------------------------------------
+
+.article
+	font-size: 16px
+	line-height: 1.5
+	h1
+		font-size: 36px
+		line-height: 1
+		+ .info
+			margin-top: 10px
+	p
+		margin: 25px 0
+		&:first-of-type, &.lead
+			font-size: 21px
+			line-height: 1.43
+		&:last-child
+			margin-bottom: 0
+
+	h2
+		font-size: 21px
+		line-height:  1.15
+		margin-top: 45px
+
+	figure
+		+clr
+		img
+			display: block
+			float: left
+			max-width: percentage(474/610)
+			margin-right: 20px
+		figcaption
+			display: block
+			font-size: 12px
+			line-height: 1.5
+			color: #9198a2
+		+mob
+			margin-left: -30px
+			margin-right: -30px
+			img
+				float: none
+				margin: 0
+				max-width: 100%
+			figcaption
+				margin-top: 20px
+				padding: 0 30px
+
+	blockquote
+		margin-top: 40px
+		font-size: 21px
+		line-height: 1.4
+		font-style: normal
+		font-weight: normal
+
+	ul, ol
+		list-style-type: disc
+		margin: 25px 0 0 20px
+		li
+			margin-left: 10px
+
+	ol
+		list-style-type: decimal
+
+.article__aside
+	background: #f4f5f6
+	padding: 30px
+	+mob
+		margin: 0 -30px
+	.l-col1 &
+		display: none
+		float: right
+		width: percentage(300/700)
+		margin: 25px 0
+		margin-left: percentage(20/700)
+		+tab
+			display: block
+		+mob
+			display: none
