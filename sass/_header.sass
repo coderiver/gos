@@ -55,7 +55,7 @@
 		margin: auto
 		padding: 10px 60px 10px 10px
 		background: $blue2
-		+transition(0.2s linear)
+		+transition(all 0.2s linear)
 		&.is-visible
 			bottom: -60px
 			visibility: visible
@@ -64,11 +64,30 @@
 			padding-right: 10px
 			.search
 				padding: 0
-				input[type="text"]:focus
-					+ .search__clear
-						display: block
+				// input[type="text"]:focus
+				// 	+ .search__clear
+				// 		display: block
 			.search__btn
 				display: none
+		&.is-static
+			position: relative
+			opacity: 1
+			visibility: visible
+			height: 0
+			padding-top: 0
+			padding-bottom: 0
+			overflow: hidden
+			top: auto
+			left: auto
+			right: auto
+			bottom: auto
+			&.is-visible
+				height: 60px
+				padding-top: 10px
+				padding-bottom: 10px
+			+r(986)
+				margin: 0 7px
+
 
 	.header__search-close
 		position: absolute
@@ -84,6 +103,8 @@
 			display: inline-block
 			vertical-align: middle
 			+s(close)
+			position: relative
+			top: -2px
 		+mob
 			display: none
 
