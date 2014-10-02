@@ -517,8 +517,9 @@
 		margin-top: 0
 	a
 		color: $red
-
-
+		padding-top: 6px
+		&:hover
+			text-decoration: underline
 
 
 
@@ -606,7 +607,8 @@
 	line-height: 1.5
 	h1
 		font-size: 36px
-		line-height: 1
+		line-height: 1.2
+		font-weight: normal
 		+ .info
 			margin-top: 10px
 	p
@@ -614,18 +616,22 @@
 		&:first-of-type, &.lead
 			font-size: 21px
 			line-height: 1.43
+		&:first-child
+			margin-top: 0
 		&:last-child
 			margin-bottom: 0
 
 	h2
 		font-size: 21px
 		line-height:  1.15
-		margin-top: 45px
+		margin: 45px 0 25px
+		font-weight: normal
 
 	h3
 		font-size: 21px
 		line-height:  1.15
-		margin-top: 45px
+		margin: 45px 0 25px
+		font-weight: normal
 
 	figure
 		+clr
@@ -658,12 +664,19 @@
 		font-weight: normal
 
 	ul
-		list-style: circle
+		list-style-type: none
 		margin: 25px 0
 		li
+			position: relative
 			margin-top: 25px
+			padding-left: 33px
 			&:first-child
 				margin-top: 0
+			&:before
+				content: "—"
+				position: absolute
+				top: 0
+				left: 0
 
 	ol
 		list-style-type: none
@@ -703,7 +716,6 @@
 	&.article_list
 		padding-left: 33px
 		h1
-			line-height: 1.22
 			margin-left: -33px
 		hr
 			left: -60px
@@ -717,14 +729,12 @@
 				font-size: inherit
 				line-height: inherit
 
-
-
 .article__aside
 	background: #f4f5f6
 	padding: 30px
 	+mob
 		margin: 0 -30px
-	.l-col1 &
+	.l-article.l-col1 &
 		display: none
 		float: right
 		width: percentage(300/700)
@@ -734,3 +744,54 @@
 			display: block
 		+mob
 			display: none
+
+	&.article__aside_list
+		padding: 0
+		ul
+			padding: 0
+			list-style: none
+			margin: 0
+			padding: 0
+			li
+				margin: 0
+				padding: 0
+				&:before
+					display: none
+				border-bottom: 1px solid #8190a6
+				&:last-child
+					border-bottom: none
+			a
+				display: block
+				padding: 20px 25px
+				color: #f5f4f1
+				background: $blue3
+				&:hover
+					background: #8190a6
+
+.article__attached
+	.document
+		display: inline-block
+		vertical-align: top
+		width: 49%
+		margin-top:  0
+		margin-left: -2px
+		&:first-child
+			margin-left: 0
+
+
+
+
+
+//------------------------------------------------------------------------------
+//
+//    #gallery
+//
+//------------------------------------------------------------------------------
+
+.gallery-wrap
+	padding: 35px 0
+	background: $blue
+
+.gallery
+	.gallery__main
+	.gallery__carousel
