@@ -1,12 +1,9 @@
 head.ready(function() {
 
-	// $(document).on("click", function(){
-	// 	$(".js-popup").hide();
-	// });
-
-	console.log($('body').html());
-
-	// $('ul.js-flex-menu').flexMenu();
+	$(document).on("click", function(){
+		// $(".js-popup").hide();
+		$('.js-side-menu').removeClass('is-visible');
+	});
 
 	$('.menu-flex').flexMenu({
 		'threshold' : 1, // [integer] If there are this many items or fewer in the list, we will not display a "View More" link and will instead let the list break to the next line. This is useful in cases where adding a "view more" link would actually cause more things to break  to the next line.
@@ -21,7 +18,6 @@ head.ready(function() {
 	});
 
 	$('.menu__btn_search').on('click', function() {
-		// $('.header__search').fadeIn(200);
 		$('.header__search').toggleClass('is-visible');
 		$(this).toggleClass('is-active');
 	});
@@ -31,4 +27,22 @@ head.ready(function() {
 		$('.header__search').removeClass('is-visible');
 		$('.menu__btn_search').removeClass('is-active');
 	});
+
+	$('.js-show-menu').on('click', function(event) {
+		event.preventDefault();
+		event.stopPropagation();
+		$('.js-side-menu').toggleClass('is-visible');
+		console.log("hi");
+	});
+
+	$('.side-menu__close').on('click', function(event) {
+		event.preventDefault();
+		event.stopPropagation();
+		$('.js-side-menu').removeClass('is-visible');
+	});
+
+	$('.js-side-menu').on('click', function(event) {
+		event.stopPropagation();
+	});
+
 });

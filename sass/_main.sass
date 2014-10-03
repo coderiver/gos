@@ -1,118 +1,5 @@
 //------------------------------------------------------------------------------
 //
-//    #topslider
-//
-//------------------------------------------------------------------------------
-
-.topslider
-	position: relative
-	background-color: #3C485B
-	+mob
-		padding-top: 42px
-
-	.topslider__nav
-		height: 40px
-		position: absolute
-		z-index: 3
-		bottom: 130px
-		left: 0
-		right: 0
-		line-height: 40px
-		font-size: 0
-		+mob
-			position: static
-
-	.topslider__label
-		background: $red
-		display: inline-block
-		vertical-align: top
-		font-size: 18px
-		padding: 0 17px
-		color: #FFF
-		a
-			color: #FFF
-			text-decoration: none
-		i
-			display: inline-block
-			+s(flag)
-			margin-right: 5px
-			position: relative
-			top: 3px
-
-	.topslider__prev,
-	.topslider__next
-		width: 40px
-		background: #FFF
-		display: inline-block
-		vertical-align: top
-		text-align: center
-		cursor: pointer
-		&:before
-			content: ""
-			display: inline-block
-			vertical-align: middle
-			position: relative
-			top: 3px
-	.topslider__prev
-		&:before
-			+s(topslider-prev)
-	.topslider__next
-		background: $blue
-		&:before
-			+s(topslider-next)
-
-.slide
-	position: relative
-
-	img
-		display: block
-		margin: 0 auto
-		max-width: 100%
-
-	.slide__pic
-		overflow: hidden
-		+mob
-			display: none
-
-	.slide__box
-		position: absolute
-		z-index: 2
-		bottom: 0
-		left: 0
-		right: 0
-		min-height: 130px
-		box-sizing: border-box
-		padding: 19px 0 23px
-		background-color: $blue
-		background-color: rgba(45,55,70,0.5)
-		+mob
-			position: static
-			min-height: auto
-			background: none
-
-	.slide__title
-		font-size: 24px
-		line-height: 1.25
-		color: #FFF
-		+space
-		text-decoration: none
-		a
-			text-decoration: none
-			color: #FFF
-
-	.slide__date
-		display: block
-		margin-top: 10px
-		font-size: 12px
-		line-height: 1.5
-		color: #7C8696
-
-
-
-
-
-//------------------------------------------------------------------------------
-//
 //    #blocks
 //
 //------------------------------------------------------------------------------
@@ -140,6 +27,8 @@
 		font-size: 36px
 		.l-content > &
 			margin-bottom: 25px
+	&.title_margin
+		margin-left: 62px
 
 .news
 	display: block
@@ -373,14 +262,15 @@
 			margin-right: 15px
 
 .breadcrumbs
-	margin-top: 30px
-	font-size: 36px
-	line-height: 1
+	margin-top: 25px
+	font-size: 21px
+	line-height: 1.2
 	li
 		display: inline-block
 		margin-right: 14px
+		&:first-child
+			font-size: 36px
 		&:last-child
-			font-size: 21px
 			margin-right: 0
 			a
 				color: #c6c6c6
@@ -400,8 +290,9 @@
 			&:hover
 				color: $red
 		li
-			&:last-child
+			&:first-child
 				font-size: inherit
+			&:last-child
 				a
 					color: $blue
 
@@ -422,9 +313,10 @@
 				color: $blue
 		li
 			margin-right: 6px
+			&:first-child
+				font-size: inherit
 			&:last-child
 				a
-					font-size: 14px
 					color: $blue
 			&:after
 				margin-left: 11px
@@ -520,6 +412,231 @@
 		padding-top: 6px
 		&:hover
 			text-decoration: underline
+
+.profile-pic
+	position: relative
+	overflow: hidden
+	background: #eceef1
+	+clr
+	.profile-pic__img
+		float: left
+		width: percentage(720/1100)
+		overflow: hidden
+	img
+		display: block
+		max-width: 100%
+		margin: auto
+	.profile-pic__caption,
+	figcaption
+		float: right
+		width: percentage(380/1100)
+		padding: 30px
+		box-sizing: border-box
+	dl, dd, dt
+		display: block
+		font-style: normal
+		font-weight: normal
+	dt
+		font-size: 30px
+		line-height: 1.2
+
+	dd
+		font-size: 16px
+		line-height: 1.5
+		margin-top: 15px
+	+r(1000)
+		.profile-pic__img
+			float: none
+			width: 100%
+		.profile-pic__caption,
+		figcaption
+			float: none
+			width: 100%
+	+tab
+		.profile-pic__caption,
+		figcaption
+			padding: 23px
+	+mob
+		dt
+			font-size: 24px
+		p.lead
+			font-size: 18px
+			line-height: 1.33
+
+
+.person
+	display: block
+	margin: 25px 0
+	line-height: 1.5
+	font-size: 16px
+	+clr
+	&:first-child
+		margin-top: 0
+	&:last-child
+		margin-bottom: 0
+	.person__pic
+		float: left
+		width: 50px
+		height: 50px
+		margin-top: 7px
+		border-radius: 50%
+		overflow: hidden
+		img
+			display: block
+			max-width: 100%
+	.person__content
+		margin-left: 62px
+	.person__name
+		color: $red
+	.person__about
+		margin-top: 3px
+
+	&.person_lead
+		font-size: 21px
+		.person__name
+			color: $blue
+
+.gray-wrap
+	margin-top: 25px
+	background: #eceef1
+	.l-content
+		padding: 30px 0
+
+.links-list
+	padding: 0
+	list-style: none
+	margin: 0
+	padding: 0
+	li
+		margin: 0
+		padding: 0
+		&:before
+			display: none
+		border-bottom: 1px solid #8190a6
+		&:last-child
+			border-bottom: none
+	a
+		display: block
+		padding: 20px 25px
+		color: #f5f4f1
+		background: $blue3
+		&:hover
+			background: #8190a6
+
+
+
+
+
+//------------------------------------------------------------------------------
+//
+//    #topslider
+//
+//------------------------------------------------------------------------------
+
+.topslider
+	position: relative
+	background-color: #3C485B
+	+mob
+		padding-top: 42px
+
+	.topslider__nav
+		height: 40px
+		position: absolute
+		z-index: 3
+		bottom: 130px
+		left: 0
+		right: 0
+		line-height: 40px
+		font-size: 0
+		+mob
+			position: static
+
+	.topslider__label
+		background: $red
+		display: inline-block
+		vertical-align: top
+		font-size: 18px
+		padding: 0 17px
+		color: #FFF
+		a
+			color: #FFF
+			text-decoration: none
+		i
+			display: inline-block
+			+s(flag)
+			margin-right: 5px
+			position: relative
+			top: 3px
+
+	.topslider__prev,
+	.topslider__next
+		width: 40px
+		background: #FFF
+		display: inline-block
+		vertical-align: top
+		text-align: center
+		cursor: pointer
+		&:hover
+			opacity: 0.9
+		&:before
+			content: ""
+			display: inline-block
+			vertical-align: middle
+			position: relative
+			top: 0
+	.topslider__prev
+		&:before
+			+s(topslider-prev)
+	.topslider__next
+		background: $blue
+		&:before
+			+s(topslider-next)
+
+.slide
+	position: relative
+
+	img
+		display: block
+		margin: 0 auto
+		max-width: 100%
+
+	.slide__pic
+		overflow: hidden
+		+mob
+			display: none
+
+	.slide__box
+		position: absolute
+		z-index: 2
+		bottom: 0
+		left: 0
+		right: 0
+		min-height: 130px
+		box-sizing: border-box
+		padding: 19px 0 23px
+		background-color: $blue
+		background-color: rgba(45,55,70,0.5)
+		+mob
+			position: static
+			min-height: auto
+			background: none
+
+	.slide__title
+		font-size: 24px
+		line-height: 1.25
+		color: #FFF
+		+space
+		text-decoration: none
+		a
+			text-decoration: none
+			color: #FFF
+
+	.slide__date
+		display: block
+		margin-top: 10px
+		font-size: 12px
+		line-height: 1.5
+		color: #7C8696
 
 
 
@@ -663,7 +780,7 @@
 		font-style: normal
 		font-weight: normal
 
-	ul
+	& > ul
 		list-style-type: none
 		margin: 25px 0
 		li
@@ -678,7 +795,7 @@
 				top: 0
 				left: 0
 
-	ol
+	& > ol
 		list-style-type: none
 		margin: 25px 0
 		counter-reset: list
@@ -697,7 +814,7 @@
 				font-size: 12px
 				color: #9198a2
 
-	hr
+	& > hr
 		width: percentage(760/940)
 		margin: 25px 0
 		height: 1px
@@ -717,12 +834,12 @@
 		padding-left: 33px
 		h1
 			margin-left: -33px
-		hr
+		& > hr
 			left: -60px
 			+tab
 				left: 0
 				margin-left: -56px
-		ol
+		& > ol
 			margin-left: -33px
 		p
 			&:first-of-type, &.lead
@@ -747,26 +864,6 @@
 
 	&.article__aside_list
 		padding: 0
-		ul
-			padding: 0
-			list-style: none
-			margin: 0
-			padding: 0
-			li
-				margin: 0
-				padding: 0
-				&:before
-					display: none
-				border-bottom: 1px solid #8190a6
-				&:last-child
-					border-bottom: none
-			a
-				display: block
-				padding: 20px 25px
-				color: #f5f4f1
-				background: $blue3
-				&:hover
-					background: #8190a6
 
 .article__attached
 	.document
@@ -791,7 +888,192 @@
 .gallery-wrap
 	padding: 35px 0
 	background: $blue
+	+mob
+		padding: 0
 
 .gallery
 	.gallery__main
+		position: relative
+
+	.gallery__prev,
+	.gallery__next
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 40px
+		height: 40px
+		line-height: 40px
+		box-sizing: border-box
+		text-align: center
+		cursor: pointer
+		&:before
+			content: ""
+			display: inline-block
+			vertical-align: middle
+			position: relative
+		&:hover
+			opacity: 0.9
+	.gallery__prev
+		background: #FFF
+		&:before
+			+s(topslider-prev)
+	.gallery__next
+		left: 40px
+		background: $blue
+		background: rgba(45,55,70,0.3)
+		&:before
+			+s(topslider-next)
+
 	.gallery__carousel
+		position: relative
+		margin-top: 4px
+		padding-right: 121px
+	.gallery__carousel-slides
+		+clr
+	.gallery__carousel-slide
+		float: left
+		position: relative
+		width: 117px
+		height: 67px
+		box-sizing: border-box
+		cursor: pointer
+		img
+			display: block
+			width: 100%
+			max-width: 100%
+		&.is-active
+			box-shadow: inset 0 0 0 3px $red
+			&:before
+				content: ""
+				position: absolute
+				box-sizing: border-box
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				border: 3px solid $red
+	.gallery__carousel-autoplay
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 1px
+		width: 121px
+		box-sizing: border-box
+		border: 1px solid #6c737e
+		+vertical
+		&:after
+			content: ""
+			display: inline-block
+			vertical-align: middle
+			width: 0
+			height: 0
+			border: 0 solid transparent
+			border-width: 6px 0 6px 10px
+			border-left-color: #fff
+
+
+	+mob
+		margin-left: -23px
+		margin-right: -23px
+
+.gallery__slide
+	+clr
+	.gallery__slide-pic
+		float: left
+		width: percentage(610/940)
+		overflow: hidden
+		img
+			display: block
+			max-width: 100%
+	.gallery__slide-caption
+		float: right
+		width: percentage(330/940)
+		box-sizing: border-box
+		padding: 0 30px
+		font-size: 12px
+		line-height:  1.5
+		color: #9198a2
+	+mob
+		.gallery__slide-pic
+			float: none
+			width: 100%
+		.gallery__slide-caption
+			display: none
+
+
+
+
+
+//------------------------------------------------------------------------------
+//
+//    #profile
+//
+//------------------------------------------------------------------------------
+
+.profile
+	line-height: 1.5
+	p
+		margin: 25px 0
+		&.lead
+			font-size: 21px
+			line-height: 1.4
+		&:first-child
+			margin-top: 0
+		&:last-child
+			margin-bottom: 0
+	.profile__head
+		// max-width: 1100px
+		margin: 25px auto 0
+
+
+
+
+
+//------------------------------------------------------------------------------
+//
+//    #side menu
+//
+//------------------------------------------------------------------------------
+
+.side-menu
+	position: absolute
+	z-index: 500
+	top: 0
+	left: -310px
+	max-width: 300px
+	+transition( 0.2s linear)
+	.side-menu__title
+		padding: 50px 30px 30px
+		background: $red
+		font-weight: normal
+		color: #FFF
+		color: rgba(255,255,255,0.4)
+		border-bottom: 1px solid #D13D4B
+	.side-menu__close
+		position: absolute
+		top: 0
+		right: 0
+		width: 55px
+		height: 55px
+		line-height: 55px
+		text-align: center
+		background-color: #D13D4B
+		background-color: rgba(255,255,255,0.2)
+		cursor: pointer
+		&:before
+			content: ""
+			display: inline-block
+			vertical-align: middle
+			+s(close)
+		&:hover
+			background-color: rgba(255,255,255,0.3)
+	.links-list
+		li
+			border-color: #D13D4B
+		a
+			color: #fff
+			background: $red
+			&:hover
+				color: #7C0612
+	&.is-visible
+		left: 0

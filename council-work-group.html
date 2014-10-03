@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Soviet Work Group</title>
+	<title>council Work Group</title>
 	<meta name="viewport" content="initial-scale=1"/>
 	<!-- <meta name="viewport" content="width=1200"> -->
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
@@ -135,7 +135,7 @@
 
 				<div class="l-col2">
 					<aside class="article__aside article__aside_list">
-						<ul>
+						<ul class="links-list">
 							<li><a href="#">Временная рабочая группа по мониторингу соблюдения прав человека на территории Украины</a></li>
 							<li><a href="#">Временная рабочая группа по развитию гражданского общества и правам человека в Крыму</a></li>
 							<li><a href="#">Рабочая группа президиума Совета при Президенте Российской Федерации по противодействию коррупции по взаимодействию со структурами гражданского общества</a></li>
@@ -154,17 +154,32 @@
 	<div class="gallery-wrap">
 		<div class="l-center">
 			<div class="gallery">
+				<!-- BEGIN gallery main -->
 				<div class="gallery__main">
 					<div class="gallery__slides">
-						<figure class="slide">
-							<img src="img/putin.jpg" alt="">
-							<figcaption class="slide__caption">На заседании Совета по модернизации экономики и инновационному развитию России. Фото пресс-службы Президента России</figcaption>
+						<figure class="gallery__slide">
+							<div class="gallery__slide-pic"><img src="img/putin.jpg" alt=""></div>
+							<figcaption class="gallery__slide-caption">На заседании Совета по модернизации экономики и инновационному развитию России. Фото пресс-службы Президента России</figcaption>
 						</figure>
 					</div>
 					<div class="gallery__prev"></div>
 					<div class="gallery__next"></div>
 				</div>
-				<div class="gallery__carousel"></div>
+				<!-- END gallery main -->
+				<!-- BEGIN gallery carousel -->
+				<div class="gallery__carousel">
+					<div class="gallery__carousel-slides">
+						<div class="gallery__carousel-slide is-active"><img src="img/putin.jpg"></div>
+						<div class="gallery__carousel-slide"><img src="img/news.jpg"></div>
+						<div class="gallery__carousel-slide"><img src="img/news2.jpg"></div>
+						<div class="gallery__carousel-slide"><img src="img/news3.jpg"></div>
+						<div class="gallery__carousel-slide"><img src="img/news4.jpg"></div>
+						<div class="gallery__carousel-slide"><img src="img/news5.jpg"></div>
+						<div class="gallery__carousel-slide"><img src="img/news6.jpg"></div>
+					</div>
+					<div class="gallery__carousel-autoplay"></div>
+				</div>
+				<!-- BEGIN gallery carousel -->
 			</div>
 		</div>
 	</div>
