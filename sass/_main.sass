@@ -544,11 +544,13 @@
 		position: absolute
 		z-index: 3
 		top: -59px
-		left: 0
+		left: 30px
 		right: 0
 		line-height: 40px
 		font-size: 0
 		white-space: nowrap
+		+tab
+			left: 23px
 		+mob
 			position: static
 			margin-bottom: 20px
@@ -789,7 +791,7 @@
 		font-style: normal
 		font-weight: normal
 
-	& > ul
+	ul
 		list-style-type: none
 		margin: 25px 0
 		li
@@ -804,7 +806,7 @@
 				top: 0
 				left: 0
 
-	& > ol
+	ol
 		list-style-type: none
 		margin: 25px 0
 		counter-reset: list
@@ -823,7 +825,7 @@
 				font-size: 12px
 				color: #9198a2
 
-	& > hr
+	hr
 		width: percentage(760/940)
 		margin: 25px 0
 		height: 1px
@@ -843,12 +845,12 @@
 		padding-left: 33px
 		h1
 			margin-left: -33px
-		& > hr
+		hr
 			left: -60px
 			+tab
 				left: 0
 				margin-left: -56px
-		& > ol
+		ol
 			margin-left: -33px
 		p
 			&:first-of-type, &.lead
@@ -860,6 +862,14 @@
 	padding: 30px
 	+mob
 		margin: 0 -30px
+
+	ul
+		list-style: none
+		margin: 0
+		padding: 0
+		li
+			margin: 0
+			padding: 0
 
 	&.article__aside_list
 		padding: 0
@@ -911,11 +921,19 @@
 	.gallery__main
 		position: relative
 
+	.gallery__nav
+		position: absolute
+		left: 0
+		bottom: 0
+		+clr
+
 	.gallery__prev,
 	.gallery__next
-		position: absolute
-		bottom: 0
-		left: 0
+		display: block !important
+		float: left
+		// position: absolute
+		// bottom: 0
+		// left: 0
 		width: 40px
 		height: 40px
 		line-height: 40px
@@ -934,9 +952,10 @@
 		&:before
 			+s(topslider-prev)
 	.gallery__next
-		left: 40px
+		// left: 40px
 		background: $blue
 		background: rgba(45,55,70,0.3)
+		border: 1px solid rgba(255,255,255,0.2)
 		&:before
 			+s(topslider-next)
 
@@ -944,6 +963,9 @@
 		position: relative
 		margin-top: 4px
 		padding-right: 121px
+		+mob
+			padding-right: 49px
+			margin-top: 1px
 	.gallery__carousel-slides
 		+clr
 	.gallery__carousel-slide
@@ -953,22 +975,27 @@
 		height: 67px
 		box-sizing: border-box
 		cursor: pointer
+		overflow: hidden
 		img
 			display: block
-			width: 100%
 			max-width: 100%
-		// &.is-active, &.slick-active
-		// 	box-shadow: inset 0 0 0 3px $red
-		// 	&:before
-		// 		content: ""
-		// 		position: absolute
-		// 		z-index: 1
-		// 		box-sizing: border-box
-		// 		top: 0
-		// 		left: 0
-		// 		width: 100%
-		// 		height: 100%
-		// 		border: 3px solid $red
+		&.is-active, &.slick-active
+			// border: 3px solid $red
+			// -webkit-box-shadow: 0 0 0 3px $red inset
+			// box-shadow: 0 0 0 3px $red inset
+			&:before
+				content: ""
+				position: absolute
+				z-index: 1
+				box-sizing: border-box
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				border: 3px solid $red
+			+ .slick-active
+				&:before
+					display: none
 	.gallery__carousel-autoplay
 		position: absolute
 		top: 0
@@ -978,6 +1005,7 @@
 		box-sizing: border-box
 		border: 1px solid #6c737e
 		+vertical
+		cursor: pointer
 		&:after
 			content: ""
 			display: inline-block
@@ -987,6 +1015,14 @@
 			border: 0 solid transparent
 			border-width: 6px 0 6px 10px
 			border-left-color: #fff
+		&.is-active
+			// border-color: $red
+			&:after
+				border-left-color: $red
+
+		+mob
+			width: 49px
+			border: none
 
 	+mob
 		margin-left: -23px
