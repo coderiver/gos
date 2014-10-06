@@ -45,4 +45,49 @@ head.ready(function() {
 		event.stopPropagation();
 	});
 
+	//topslider
+	$('.topslider__pics').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		slide: '.slide',
+		asNavFor: '.topslider__captions',
+		prevArrow: '.topslider__prev',
+		nextArrow: '.topslider__next',
+		draggable: false
+	});
+
+	$('.topslider__captions').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		slide: '.caption',
+		asNavFor: '.topslider__pics',
+		prevArrow: '.topslider__prev',
+		nextArrow: '.topslider__next',
+		draggable: false
+	});
+
+	//gallery
+	$('.gallery__slides').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		slide: '.gallery__slide',
+		asNavFor: '.gallery__carousel-slides',
+		prevArrow: '.gallery__prev',
+		nextArrow: '.gallery__next',
+		adaptiveHeight: true,
+		draggable: false
+	});
+
+	$('.gallery__carousel-slides').slick({
+		slidesToShow: 7,
+		slidesToScroll: 1,
+		slide: '.gallery__carousel-slide',
+		asNavFor: '.gallery__slides',
+		prevArrow: '.gallery__prev',
+		nextArrow: '.gallery__next',
+		focusOnSelect: true,
+		draggable: false
+	});
+
 });
