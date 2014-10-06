@@ -7,25 +7,49 @@
 	+tab
 		padding: 0 23px
 
-
 .l-content
 	padding: 22px 0 40px
 	+clr
 	.l-col1,
+	.l-col2
+		width: percentage(455/940)
+		margin-right: 0
+	.l-col1
+		float: left
+	.l-col2
+		float: right
+	+mob
+		.l-col1,
+		.l-col2
+			float: none
+			width: 100%
+		.l-col2
+			margin-top: 25px
+
+.l-content-four-col
+	padding: 22px 0 40px
+	+clr
+	.l-col1,
 	.l-col2,
-	.l-col3
+	.l-col3,
+	.l-col4
 		width: percentage(295/940)
 		float: left
 		margin-right: percentage(27/940)
-	.l-col3
+	.l-col3,
+	.l-col4
+		float: right
 		margin-right: 0
+	.l-col4
+		margin-top: 30px
 	+tab
 		.l-col1,
 		.l-col3
 			float: left
 			width: percentage(335/700)
 			margin-right: percentage(30/700)
-		.l-col2
+		.l-col2,
+		.l-col4
 			float: right
 			width: percentage(335/700)
 			margin-right: 0
@@ -34,57 +58,15 @@
 	+mob
 		.l-col1,
 		.l-col2,
-		.l-col3
+		.l-col3,
+		.l-col4
 			float: none
 			width: 100%
 			margin: 0
 		.l-col2,
-		.l-col3
+		.l-col3,
+		.l-col4
 			margin-top: 30px
-
-	&.l-content_hide-col
-		+tab
-			.l-col1
-				float: left
-				width: percentage(335/700)
-				margin-right: percentage(30/700)
-			.l-col2
-				float: right
-				width: percentage(335/700)
-				margin-right: 0
-			.l-col3
-				display: none
-		+mob
-			.l-col1,
-			.l-col2,
-			.l-col3
-				float: none
-				width: 100%
-				margin: 0
-			.l-col2,
-			.l-col3
-				display: none
-				margin-top: 30px
-
-	&.l-content_two-col
-		.l-col1,
-		.l-col2
-			width: percentage(455/940)
-			margin-right: 0
-		.l-col1
-			float: left
-		.l-col2
-			float: right
-		.l-col3
-			display: none
-		+tab
-			.l-col1,
-			.l-col2
-				float: none
-				width: 100%
-			.l-col2
-				margin-top: 25px
-
 
 .l-article
 	margin: 30px 0

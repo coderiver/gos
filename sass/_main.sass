@@ -575,6 +575,7 @@
 		display: inline-block
 		vertical-align: top
 		text-align: center
+		line-height: 40px
 		cursor: pointer
 		&:hover
 			opacity: 0.9
@@ -699,9 +700,15 @@
 			right: 25px
 
 	.btn
+		white-space: nowrap
+		overflow: hidden
+		-ms-text-overflow: ellipsis
+		text-overflow: ellipsis
 		margin-top: 27px
 		+mob
 			display: block
+			max-width: 100%
+			font-size: 15px
 
 	.btn + .btn
 		margin-left: 9px
@@ -828,7 +835,7 @@
 			margin-left: -23px
 			margin-right: -23px
 
-	&.article_simple
+	// &.article_simple
 
 	&.article_list
 		padding-left: 33px
@@ -851,7 +858,11 @@
 	padding: 30px
 	+mob
 		margin: 0 -30px
-	.l-article.l-col1 &
+
+	&.article__aside_list
+		padding: 0
+
+	&.article__aside_copy
 		display: none
 		float: right
 		width: percentage(300/700)
@@ -862,8 +873,6 @@
 		+mob
 			display: none
 
-	&.article__aside_list
-		padding: 0
 
 .article__attached
 	.document
@@ -874,6 +883,11 @@
 		margin-left: -2px
 		&:first-child
 			margin-left: 0
+		+mob
+			display: block
+			width: auto
+			margin-top: 25px
+
 
 
 
