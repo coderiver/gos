@@ -1,3 +1,17 @@
+%css-arrow-right
+	width: 0
+	height: 0
+	border: 0 solid transparent
+	border-width: 6px 0 6px 10px
+	border-left-color: #fff
+
+%css-arrow-left
+	width: 0
+	height: 0
+	border: 0 solid transparent
+	border-width: 6px 10px 6px 0
+	border-right-color: #fff
+
 //------------------------------------------------------------------------------
 //
 //    #blocks
@@ -547,8 +561,9 @@
 		left: 30px
 		right: 0
 		line-height: 40px
-		font-size: 0
-		white-space: nowrap
+		// font-size: 0
+		// white-space: nowrap
+		+clr
 		+tab
 			left: 23px
 		+mob
@@ -557,8 +572,10 @@
 
 	.topslider__label
 		background: $red
-		display: inline-block
-		vertical-align: top
+		// display: inline-block
+		// vertical-align: middle
+		display: block
+		float: left
 		font-size: 18px
 		padding: 0 17px
 		color: #FFF
@@ -576,29 +593,29 @@
 
 	.topslider__prev,
 	.topslider__next,
+		display: block
+		float: left
 		width: 40px
 		background: #FFF
-		display: inline-block
-		vertical-align: top
 		text-align: center
 		line-height: 40px
 		cursor: pointer
-		// &:hover
-		// 	opacity: 0.9
 		&:before
 			content: ""
 			display: inline-block
 			vertical-align: middle
 			position: relative
-			top: 0
+			top: -2px
 	.topslider__prev
 		&:before
-			+s(topslider-prev)
+			// +s(topslider-prev)
+			@extend %css-arrow-left
+			border-right-color: #d5d7da
 	.topslider__next
 		background: $blue
 		&:before
-			+s(topslider-next)
-
+			// +s(topslider-next)
+			@extend %css-arrow-right
 	.topslider__box
 		position: absolute
 		z-index: 2
@@ -709,13 +726,13 @@
 		-ms-text-overflow: ellipsis
 		text-overflow: ellipsis
 		margin-top: 27px
+		margin-right: 9px
 		+mob
 			display: block
 			max-width: 100%
 			font-size: 15px
 
 	.btn + .btn
-		margin-left: 9px
 		+mob
 			margin-left: 0
 			margin-top: 9px
@@ -739,6 +756,8 @@
 		font-weight: normal
 		+ .info
 			margin-top: 10px
+		+mob
+			font-size: 30px
 	p
 		margin: 25px 0
 		&:first-of-type, &.lead
@@ -861,7 +880,7 @@
 	background: #f4f5f6
 	padding: 30px
 	+mob
-		margin: 0 -30px
+		margin: 0 -23px
 
 	ul
 		list-style: none
@@ -929,11 +948,8 @@
 
 	.gallery__prev,
 	.gallery__next
-		display: block !important
+		display: block
 		float: left
-		// position: absolute
-		// bottom: 0
-		// left: 0
 		width: 40px
 		height: 40px
 		line-height: 40px
@@ -945,19 +961,20 @@
 			display: inline-block
 			vertical-align: middle
 			position: relative
-		// &:hover
-		// 	opacity: 0.9
+			top: -2px
 	.gallery__prev
 		background: #FFF
 		&:before
-			+s(topslider-prev)
+			// +s(topslider-prev)
+			@extend %css-arrow-left
+			border-right-color: #d5d7da
 	.gallery__next
-		// left: 40px
 		background: $blue
 		background: rgba(45,55,70,0.3)
 		border: 1px solid rgba(255,255,255,0.2)
 		&:before
-			+s(topslider-next)
+			// +s(topslider-next)
+			@extend %css-arrow-right
 
 	.gallery__carousel
 		position: relative
@@ -986,7 +1003,7 @@
 			&:before
 				content: ""
 				position: absolute
-				z-index: 1
+				z-index: 100
 				box-sizing: border-box
 				top: 0
 				left: 0
@@ -1010,13 +1027,8 @@
 			content: ""
 			display: inline-block
 			vertical-align: middle
-			width: 0
-			height: 0
-			border: 0 solid transparent
-			border-width: 6px 0 6px 10px
-			border-left-color: #fff
+			@extend %css-arrow-right
 		&.is-active
-			// border-color: $red
 			&:after
 				border-left-color: $red
 
