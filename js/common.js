@@ -50,7 +50,6 @@ head.ready(function() {
 		slidesToScroll: 1,
 		slide: '.slide',
 		asNavFor: '.topslider__captions',
-		draggable: false,
 		arrows: false
 	});
 
@@ -61,7 +60,6 @@ head.ready(function() {
 		asNavFor: '.topslider__pics',
 		prevArrow: '.topslider__prev',
 		nextArrow: '.topslider__next',
-		draggable: false
 	});
 
 	//gallery
@@ -71,7 +69,6 @@ head.ready(function() {
 		slide: '.gallery__slide',
 		asNavFor: '.gallery__carousel-slides',
 		adaptiveHeight: true,
-		draggable: false,
 		arrows: false
 	});
 
@@ -84,7 +81,6 @@ head.ready(function() {
 		nextArrow: '<div class="gallery__next"></div>',
 		appendArrows: '.gallery__nav',
 		focusOnSelect: true,
-		draggable: false,
 		autoplaySpeed: 4000,
 		responsive: [
 			{
