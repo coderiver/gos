@@ -295,6 +295,10 @@
 			display: inline-block
 			+s(arrow)
 			margin-left: 18px
+		+mob
+			font-size: 18px
+			&:first-child
+				font-size: 18px
 
 	&.breadcrumbs_medium
 		margin-top: 45px
@@ -1078,13 +1082,13 @@
 	line-height: 1.5
 	p
 		margin: 25px 0
-		&.lead
-			font-size: 21px
-			line-height: 1.4
 		&:first-child
 			margin-top: 0
 		&:last-child
 			margin-bottom: 0
+	.lead
+		font-size: 21px
+		line-height: 1.4
 	.profile__head
 		// max-width: 1100px
 		margin: 25px auto 0

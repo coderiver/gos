@@ -125,8 +125,10 @@
 		position: relative
 		margin: 0 37px
 		height: 60px
+		font-size: 0
 		li
-			float: left
+			// float: left
+			display: inline-block
 			&.is-active
 				a
 					background: $blue2
@@ -138,10 +140,10 @@
 			text-decoration: none
 			&:hover
 				background-color: $red
-			+tab
-				padding: 0 15px
-			+mob
-				padding: 0 10px
+			// +tab
+			// 	padding: 0 15px
+			// +mob
+			// 	padding: 0 10px
 			&.is-active
 				background: $blue2
 
@@ -162,7 +164,7 @@
 			padding: 10px 0
 			z-index: 100
 			li
-				float: none
+				display: block
 				&.is-active
 					a
 						background: rgba(0,0,0,0.2)
@@ -234,7 +236,7 @@
 			height: auto
 			margin: 0
 		li
-			float: none
+			display: block
 			margin: 0 -23px
 			border-top: 1px solid $blue3
 			&:first-child
