@@ -160,20 +160,29 @@
 			background: $red
 			top: 100%
 			right: 0
-			width: auto
+			width: 260px
 			padding: 10px 0
 			z-index: 100
+			box-sizing: border-box
 			li
 				display: block
 				&.is-active
 					a
-						background: rgba(0,0,0,0.2)
+						// background: rgba(0,0,0,0.2)
+						background: #9C0917
 			a
-				line-height: 40px
 				box-sizing: border-box
-				white-space: nowrap
+				line-height: 1.25
+				padding-top: 10px
+				padding-bottom: 10px
 				&:hover
-					background: rgba(0,0,0,0.2)
+					// background: rgba(0,0,0,0.2)
+					background: #9C0917
+				+mob
+					width: 260px
+					line-height: 1.25
+					padding-top: 10px
+					padding-bottom: 10px
 
 	.menu__btn
 		position: absolute
@@ -221,10 +230,12 @@
 			background: $blue3
 			li
 				a:hover
-					background: rgba(0,0,0,0.2)
+					// background: rgba(0,0,0,0.2)
+					background: #4D5C72
 				&.is-active
 					a
-						background: rgba(0,0,0,0.2)
+						// background: rgba(0,0,0,0.2)
+						background: #4D5C72
 
 	&.menu_sub-bottom
 		display: none

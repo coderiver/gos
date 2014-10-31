@@ -282,12 +282,10 @@
 	li
 		display: inline-block
 		margin-right: 14px
-		&:first-child
-			font-size: 36px
+		// &:first-child
+		// 	font-size: 36px
 		&:last-child
 			margin-right: 0
-			a
-				color: #c6c6c6
 			&:after
 				display: none
 		&:after
@@ -295,6 +293,11 @@
 			display: inline-block
 			+s(arrow)
 			margin-left: 18px
+		&.is-big
+			font-size: 36px
+		&.is-last
+			a
+				color: #c6c6c6
 		+mob
 			font-size: 18px
 			&:first-child
@@ -554,6 +557,8 @@
 .topslider
 	position: relative
 	background-color: #3C485B
+	max-height: 463px
+	overflow: hidden
 	+mob
 		padding-top: 42px
 
@@ -604,6 +609,7 @@
 		text-align: center
 		line-height: 40px
 		cursor: pointer
+		+user-select(none)
 		&:before
 			content: ""
 			display: inline-block
@@ -638,31 +644,51 @@
 
 .topslider__pics
 	overflow: hidden
-
 	.slide
+		height: 463px
+		overflow: hidden
+		position: relative
 		img
 			display: block
 			margin: 0 auto
-			max-width: 100%
+			height: 100%
+			max-width: none
 		+mob
 			display: none !important
+	.slide__in
+		position: absolute
+		top: 0
+		left: 50%
+		width: 3000px
+		margin-left: -1500px
+		height: 100%
+		text-align: center
 
-.caption__title
-	font-size: 24px
-	line-height: 1.25
-	color: #FFF
-	+space
-	text-decoration: none
-	a
-		text-decoration: none
+.topslider__captions
+	overflow: hidden
+	.caption
+		display: none
+		&:first-child
+			display: block
+		&.slick-slide
+			display: block
+
+	.caption__title
+		font-size: 24px
+		line-height: 1.25
 		color: #FFF
+		+space
+		text-decoration: none
+		a
+			text-decoration: none
+			color: #FFF
 
-.caption__date
-	display: block
-	margin-top: 10px
-	font-size: 12px
-	line-height: 1.5
-	color: #7C8696
+	.caption__date
+		display: block
+		margin-top: 10px
+		font-size: 12px
+		line-height: 1.5
+		color: #7C8696
 
 
 
@@ -758,19 +784,21 @@
 		font-size: 36px
 		line-height: 1.2
 		font-weight: normal
+		margin-bottom: 25px
 		+ .info
 			margin-top: 10px
 		+mob
 			font-size: 30px
 	p
 		margin: 25px 0
-		&:first-of-type, &.lead
-			font-size: 21px
-			line-height: 1.43
 		&:first-child
 			margin-top: 0
 		&:last-child
 			margin-bottom: 0
+
+	.lead
+		font-size: 21px
+		line-height: 1.43
 
 	h2
 		font-size: 21px
@@ -999,7 +1027,9 @@
 		overflow: hidden
 		img
 			display: block
-			max-width: 100%
+			max-width: none
+			height: 100%
+			min-width: 100%
 		&.is-active, &.slick-active
 			// border: 3px solid $red
 			// -webkit-box-shadow: 0 0 0 3px $red inset
