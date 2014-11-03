@@ -132,7 +132,7 @@
 			&.is-active
 				a
 					background: $blue2
-		a
+		a, .menuFlexBtnText
 			display: block
 			padding: 0 30px
 			font-size: 16px
@@ -147,22 +147,25 @@
 			&.is-active
 				background: $blue2
 
-		.flexMenu-viewMore
+		.flexMenu-viewMore, .menuFlexBtn
 			position: relative
-			a[title]
+			a[title], .menuFlexBtnText
 				letter-spacing: 0.1em
 			&.active
 				background: $red
+			.menuFlexBtnText
+				+user-select(none)
+				cursor: pointer
 			+mob
 				float: right
 
-		.flexMenu-popup
-			background: $red
+		.flexMenu-popup, .menuFlexPopup
+			z-index: 100
 			top: 100%
 			right: 0
 			width: 260px
 			padding: 10px 0
-			z-index: 100
+			background: $red
 			box-sizing: border-box
 			li
 				display: block
@@ -183,6 +186,10 @@
 					line-height: 1.25
 					padding-top: 10px
 					padding-bottom: 10px
+
+		.menuFlexPopup
+			display: none
+			position: absolute
 
 	.menu__btn
 		position: absolute
@@ -222,11 +229,11 @@
 			li.is-active
 				a
 					background: $blue3
-		.flexMenu-viewMore
+		.flexMenu-viewMore, .menuFlexBtn
 			background: $blue2
-			&.active
+			&.active, &:hover
 				background: $blue3
-		.flexMenu-popup
+		.flexMenu-popup, .menuFlexPopup
 			background: $blue3
 			li
 				a:hover
